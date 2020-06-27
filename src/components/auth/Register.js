@@ -24,6 +24,23 @@ export const Register = () => {
            email,
            password
        }
+       try {
+         const config = {
+           headers: { 
+            "Content-Type":"application/json"
+           }
+         }
+
+        const body = JSON.stringify(newUser)
+        const res = await axios.post("api/user/register",body,config)
+
+        console.log(res.data)
+
+         
+       } catch (error) {
+         console.error(error.response.data)
+       }
+
    }
 }
 
@@ -63,5 +80,7 @@ export const Register = () => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       </Fragment>
-    )
-}
+    );
+};
+
+export default Register
