@@ -1,6 +1,6 @@
 import React,{Fragment,useState} from 'react'
 import axios from 'axios';
-
+import {Link} from 'react-router-dom'
 
 export const Register = () => {
    const [formData,setFormData] = useState({
@@ -79,6 +79,9 @@ export const Register = () => {
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
+      <p className="my-1">
+       Already have an account ?<Link to="/login">Sign In</Link>
+      </p>
       </Fragment>
     );
 };
